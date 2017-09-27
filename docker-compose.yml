@@ -1,0 +1,13 @@
+version: '3.2'
+
+services:
+  
+  jenkins:
+    build: jenkins
+    volumes: 
+      - jenkins_home:/var/jenkins_home
+    ports: 
+      - 8080:8080
+    
+volumes:
+  jenkins_home:
