@@ -5,12 +5,12 @@ def repo = "https://tonivdv@bitbucket.org/tonivdv/${project}.git"
 
 def branches = GitUtils.getRemoteBranches(repo, out)
 
-folder('cool')
+folder('demo5bis')
 
 branches.each {
 
     def branchName = it
-    def jobName = "demo5-${project}-${branchName}".replaceAll('/','-')
+    def jobName = "demo5bis-${project}-${branchName}".replaceAll('/','-')
     job(jobName) {
         scm {
             git("https://github.com/${project}.git", branchName)
