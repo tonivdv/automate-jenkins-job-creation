@@ -10,8 +10,8 @@ folder('demo5bis')
 branches.each {
 
     def branchName = it
-    def jobName = "demo5bis/demo5bis-${project}-${branchName}".replaceAll('/','-')
-    job(jobName) {
+    def jobName = "demo5bis-${project}-${branchName}".replaceAll('/','-')
+    job("demo5bis/${jobName}") {
         scm {
             git("https://github.com/${project}.git", branchName)
         }
